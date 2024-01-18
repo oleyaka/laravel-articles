@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SectionController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\SectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +15,14 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SectionController::class, 'index'])->name('home');
+Route::get('/{section}', [ArticleController::class, 'showBySection'])->name('articles.showBySection');
+Route::post('/{section}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
+Route::post('/{section}/store', [ArticleController::class, 'store'])->name('articles.store');
+Route::delete('/{section}/articles/{id}', [ArticleController::class, 'destroy'])->name('articles.destroy');
 
-Route::resource('sections', SectionController::class);
-Route::resource('articles', ArticleController::class);
+
+
+
+
+

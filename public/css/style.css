@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.article-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.editable {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+.editable:hover {
+    color: darkblue;
+}
+
+.edit-mode {
+    border: 1px solid #000;
+    padding: 5px;
+}
